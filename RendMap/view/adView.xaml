@@ -1,0 +1,48 @@
+﻿<Window x:Class="RendMap.view.adView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RendMap.view"
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle}" Height="500" Width="800" MinHeight="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Style="{StaticResource TitleRow}" Grid.ColumnSpan="999">
+            <TextBlock x:Name="title" Text ="TitleAutoSet" FontWeight="DemiBold" Foreground="Black"
+                   FontSize="20" HorizontalAlignment ="Center" VerticalAlignment="Center" />
+            <Button Style="{StaticResource TitleRowButton}" Name="Back" Click="Back_Click" HorizontalAlignment="Right" Width="100" Content="Назад" FontStyle="Italic" FontSize="18" Grid.ColumnSpan="2" />
+        </Grid>
+
+        <Image  x:Name="picture" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.ColumnSpan ="4" Source="/images/no_image.png"/>
+
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Собственник" VerticalAlignment="Top" RenderTransformOrigin="1.125,8.239" Grid.Row="2"  Grid.Column="0" FontSize="18" Margin="3"/>
+        <TextBlock  x:Name="userBox" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontSize="18"   Margin="10, 3" Grid.ColumnSpan ="2"/>
+
+        <TextBlock  x:Name="textBox" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1" FontSize="18"   Margin="10, 3" Grid.ColumnSpan ="2" Cursor="Pen"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Описание" VerticalAlignment="Top" RenderTransformOrigin="1.125,8.239" Grid.Row="3"  Grid.Column="0" FontSize="18" Margin="3"/>
+
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Цена" VerticalAlignment="Top" RenderTransformOrigin="1.125,8.239" Grid.Row="4"  Grid.Column="0" FontSize="18" Margin="3"/>
+        <TextBlock  x:Name="valueBox" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="4" Grid.Column="1" FontSize="18"   Margin="10, 3" Grid.ColumnSpan ="2" InputScope="CurrencyAmount" Text="0" />
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="руб. / мес" VerticalAlignment="Top" RenderTransformOrigin="1.125,8.239" Grid.Row="4" Grid.Column="2" FontSize="18" Margin="15,3"/>
+
+        <Button x:Name="Deal" Content="Оформить" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Grid.Row="6" Click="Deal_Click" Grid.Column="1"/>
+        <Button x:Name="Chat" Content="Связаться" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Grid.Row="6" Click="Chat_Click" Grid.Column="2"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,43 @@
+﻿<Window x:Class="RendMap.view.user"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RendMap.view"
+        mc:Ignorable="d"
+        Title="username" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Style="{StaticResource TitleRow}" Grid.ColumnSpan="999">
+            <TextBlock Text ="Профиль пользователя Username" FontWeight="DemiBold" Foreground="Black"
+                FontSize="20" HorizontalAlignment ="Center" VerticalAlignment="Center" />
+            <Button Style="{StaticResource TitleRowButton}" Name="Back" Click="Back_Click" HorizontalAlignment="Right" Width="100" Content="Назад" FontStyle="Italic" FontSize="18"/>
+        </Grid>
+        <Border  BorderBrush="SteelBlue" BorderThickness="1" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="3">
+            <Image x:Name="picture" Source="/images/user.png"/>
+        </Border>
+        <TextBlock  x:Name="textBox" TextWrapping="Wrap" Grid.Row="3" Grid.Column="1" FontSize="18"   Margin="10,3,10,3" Cursor="Pen"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Отзывы" VerticalAlignment="Top" RenderTransformOrigin="1.125,8.239" Grid.Row="3"  Grid.Column="0" FontSize="18" Margin="0,3,3,0"/>
+        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="Активные объявления" VerticalAlignment="Top" RenderTransformOrigin="1.125,8.239" Grid.Row="4"  Grid.Column="0" FontSize="18" Margin="0,3,3,0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+            <Button Content="Различные функции" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3, 0"/>
+            <Button Content="Написать" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3, 0"/>
+        </StackPanel>
+
+        <ListBox Grid.Column="1" Grid.Row="3" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox Grid.Column="1" Grid.Row="4" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+    </Grid>
+</Window>

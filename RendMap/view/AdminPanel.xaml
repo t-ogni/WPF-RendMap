@@ -1,0 +1,15 @@
+﻿<Window x:Class="RendMap.view.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RendMap.view"
+        mc:Ignorable="d"
+        Title="AdminPanel" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dater" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <TextBox x:Name="texter" HorizontalAlignment="Left" Margin="41,351,0,0" TextWrapping="Wrap" Text="select * from ads;" VerticalAlignment="Top" Width="252" Height="66"/>
+        <Button Content="SQL!" HorizontalAlignment="Left" Margin="312,375,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.542,0.655" Click="Button_Click"/>
+
+    </Grid>
+</Window>
